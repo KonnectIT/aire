@@ -115,7 +115,9 @@ class Form extends \Galahad\Aire\DTD\Form implements NonInput
 	 * @var bool 
 	 */
 	protected $is_alpine_component = false;
-	
+
+	protected $is_livewire_component = false;
+
 	/**
 	 * We'll store a reference to all the elements created in the form
 	 * so that if we need to serialize them for Alpine we can. 
@@ -209,7 +211,14 @@ class Form extends \Galahad\Aire\DTD\Form implements NonInput
 		
 		return $this;
 	}
-	
+
+    public function asLivewireComponent()
+    {
+        $this->is_livewire_component = true;
+
+        return $this;
+	}
+
 	/**
 	 * Configure the form for use as an Alpine.js component
 	 * 

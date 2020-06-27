@@ -294,6 +294,10 @@ abstract class Element implements Htmlable
 					? $this->getInputName()
 					: null;
 			});
+
+			$this->attributes->setDefault('wire:model', function() {
+				return $this->getInputName();
+			});
 		}
 		
 		// TODO: We may want to generate internal IDs to use here if no name exists
